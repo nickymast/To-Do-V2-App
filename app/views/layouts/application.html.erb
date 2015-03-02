@@ -19,11 +19,21 @@
           <li><a href="/projects">Projects</a></li>
           <li><a href="/tasks">Tasks</a></li>
          </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
       </div>
     </div>
   </nav>
 
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
 <%= yield %>
 
+<%= render 'shared/footer' %>
 </body>
 </html>
