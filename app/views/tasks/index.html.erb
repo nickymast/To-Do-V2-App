@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tasks</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Due</th>
+      <th>Done</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.due %></td>
+        <td><%= task.done %></td>
+        <td><%= task.project.title %></td>
+        <td><button type="button" class="btn btn-info"><%= link_to 'Show', task %></td></button>
+        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_task_path(task) %></td></button>
+        <td><button type="button" class="btn btn-info"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td></button>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>
+<p>Take me <a href="/">HOME!</a></p>
